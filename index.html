@@ -3,86 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom PC Konfigurator</title>
+    <title>Fabio3D | Premium 3D-Druck</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🖥️ PC Konfigurator</h1>
-        <button id="theme-toggle">🌙 Dark Mode</button>
-    </header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" onclick="switchPage('home')">FABIO<span>3D</span></a>
+            <ul class="nav-links">
+                <li><a class="nav-link active" onclick="switchPage('home')">Home</a></li>
+                <li><a class="nav-link" onclick="switchPage('shop')">Shop</a></li>
+                <li><a class="nav-link" onclick="switchPage('about')">Über Uns</a></li>
+                <li><a class="nav-link" onclick="switchPage('contact')">Kontakt</a></li>
+                <li><a class="nav-link" onclick="switchPage('impressum')">Impressum</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container">
-        <section class="config-section">
-            <h2>Komponenten wählen</h2>
-            
-            <div class="component-group">
-                <label for="cpu">Prozessor (CPU)</label>
-                <select id="cpu" class="part-select" data-type="cpu">
-                    <option value="">Bitte wählen...</option>
-                </select>
+    <main>
+        
+        <section id="home-page" class="page-section active">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Premium Qualität</span><br>
+                    <br>
+                    <h1>Präzision trifft <br><span class="gradient-text">Ästhetik.</span></h1><br>
+                    <p></p><br>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="switchPage('shop')">Zum Shop</button>
+                        <button class="btn btn-secondary" onclick="switchPage('about')">Mehr erfahren</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="tech-box">
+                        <div class="tech-status">Status: Ready</div>
+                        
+                        <div class="printer-display">
+                            <img src="Creality K2 Combo.png" alt="K2 Combo" class="printer-img">
+                            <span class="printer-badge">K2 Combo</span>
+                        </div>
+                        
+                        <div class="tech-spec-mini">
+                            <strong>Aktuelles Setup:</strong> Fine Layers (0.2mm)
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="component-group">
-                <label for="cooler">CPU-Kühler</label>
-                <select id="cooler" class="part-select" data-type="cooler" disabled>
-                    <option value="">Zuerst CPU wählen...</option>
-                </select>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>&lt; 0.1mm</h3>
+                    <p>Maximale Toleranz</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Optimierte</h3>
+                    <p>Infill-Stabilität (Gyroid)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Premium</h3>
+                    <p>Filamente & Finish</p>
+                </div>
             </div>
 
-            <div class="component-group">
-                <label for="motherboard">Mainboard</label>
-                <select id="motherboard" class="part-select" data-type="motherboard" disabled>
-                    <option value="">Zuerst CPU wählen...</option>
-                </select>
-            </div>
-
-            <div class="component-group">
-                <label for="ram">Arbeitsspeicher (RAM)</label>
-                <select id="ram" class="part-select" data-type="ram" disabled>
-                    <option value="">Zuerst Mainboard wählen...</option>
-                </select>
-            </div>
-            <div class="component-group">
-                <label for="ssd">Speicher (SSD)</label>
-                <select id="ssd" class="part-select" data-type="ssd">
-                    <option value="">Bitte wählen...</option>
-                </select>
-            </div>
-
-            <div class="component-group">
-                <label for="gpu">Grafikkarte (GPU)</label>
-                <select id="gpu" class="part-select" data-type="gpu">
-                    <option value="">Bitte wählen...</option>
-                </select>
-            </div>
-
-            <div class="component-group">
-                <label for="case">Gehäuse</label>
-                <select id="case" class="part-select" data-type="case" disabled>
-                    <option value="">Zuerst Mainboard wählen...</option>
-                </select>
-            </div>
-
-            <div class="component-group">
-                <label for="psu">Netzteil</label>
-                <select id="psu" class="part-select" data-type="psu">
-                    <option value="">Bitte wählen...</option>
-                </select>
+            <h3 class="section-title-center">Unterstützte <span class="gradient-text">Materialien</span></h3>
+            <div class="material-showcase">
+                <div class="material-card">
+                    <h4><span class="material-dot" style="background: #0ea5e9;"></span>PLA</h4>
+                    <p>Optisch ansprechend. Perfekt für detailreiche Alltags-Gadgets und Prototypen mit cleanem Oberflächenfinish.</p>
+                </div>
+                <div class="material-card">
+                    <h4><span class="material-dot" style="background: #2563eb;"></span>PETG</h4>
+                    <p>Hitzebeständig und funktional. Ideal für Teile im Aussenbereich.</p>
+                </div>
+                <div class="material-card">
+                    <h4><span class="material-dot" style="background: #64748b;"></span>PLA Matte</h4>
+                    <p>Für maximale Ästhetik. Keine Reflexionen. Perfekt für Designobjekte.</p>
+                </div>
             </div>
         </section>
 
-        <aside class="summary-section">
-            <h2>Deine Konfiguration</h2>
-            <ul id="summary-list">
-                <li class="empty-state">Noch keine Komponenten ausgewählt.</li>
-            </ul>
-            <div class="total-price">
-                Gesamtpreis: CHF <span id="price-value">0</span>
+        <section id="shop-page" class="page-section">
+            <div class="shop-header">
+                <h2>Verfügbare <span class="gradient-text">Builds & Prints</span></h2>
+                <p>Präzise Specs, maximale Transparenz. Wähle dein gewünschtes Modell.</p>
             </div>
-        </aside>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-placeholder"><span>[Produktbild 1]</span></div>
+                    <div class="product-info">
+                        <span class="prod-category">Kategorie / Gadget</span>
+                        <h3>Cyberpunk Headset-Halter</h3>
+                        <div class="tech-specs">
+                            <span class="spec"><b>Material:</b> PLA+ Premium</span>
+                            <span class="spec"><b>Auflösung:</b> 0.12mm</span>
+                            <span class="spec"><b>Infill:</b> 20% Gyroid</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">29,99 €</span>
+                            <button class="btn-buy" onclick="addToCart('Cyberpunk Headset-Halter', 29.99)">In den Warenkorb</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-placeholder"><span>[Produktbild 2]</span></div>
+                    <div class="product-info">
+                        <span class="prod-category">Custom Modding</span>
+                        <h3>GPU-Halterung "Stealth"</h3>
+                        <div class="tech-specs">
+                            <span class="spec"><b>Material:</b> PETG (Hitzebeständig)</span>
+                            <span class="spec"><b>Auflösung:</b> 0.20mm</span>
+                            <span class="spec"><b>Infill:</b> 40% Grid</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">19,99 €</span>
+                            <button class="btn-buy" onclick="addToCart('GPU-Halterung Stealth', 19.99)">In den Warenkorb</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-page" class="page-section">
+            <div class="page-header">
+                <h2>Über <span class="gradient-text">Uns & Unsere Mission</span></h2>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Unsere Story</h3>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="features-grid" style="margin-top: 4rem;">
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Präzision</h3>
+                    <p>Jeder Druck wird mit perfekten Schichthöhen und Finishes gedruckt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💎</div>
+                    <h3>Qualität</h3>
+                    <p>Ästhetik steht an erster Stelle. Ich verwende High.Quality-Filamente von Creality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Schneller Versand</h3>
+                    <p>Ich stelle sicher, dass deine Produkte nach dem Druck sicher verpackt und schnell zu dir kommen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-page" class="page-section">
+            <div class="page-header">
+                <h2>Schreib mir eine <span class="gradient-text">Nachricht</span></h2>
+                <p>Fragen zu einem Druck oder einem Projekt? Lass es mich wissen!</p>
+            </div>
+            
+            <div class="contact-container">
+                <form id="my-contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="email">Deine E-Mail-Adresse</label>
+                        <input type="email" id="email" name="_replyto" placeholder="name@beispiel.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Betreff</label>
+                        <input type="text" id="subject" name="_subject" placeholder="z.B. Frage zu einem 3D-Druck" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Deine Nachricht</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Hi Fabio, ich hätte da eine Frage..." required oninput="autoResize(this)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn">Nachricht senden</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="impressum-page" class="page-section">
+            <div class="page-header">
+                <h2><span class="gradient-text">Impressum</span></h2>
+                <p>Rechtliche Angaben gemäß den gesetzlichen Anforderungen.</p>
+            </div>
+            <div class="legal-content">
+                <h3>Angaben gemäß § 5 TMG</h3>
+                <p>Max Mustermann<br>Mustermann 3D-Druck<br>Musterstraße 1<br>12345 Musterstadt</p>
+                
+                <h3>Kontakt</h3>
+                <p>Telefon: +49 (0) 123 456789<br>E-Mail: info@deinshopname.de</p>
+                
+                <h3>Umsatzsteuer-ID</h3>
+                <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>DE 123 456 789</p>
+                
+                <h3>Redaktionell verantwortlich</h3>
+                <p>Max Mustermann<br>Musterstraße 1<br>12345 Musterstadt</p>
+            </div>
+        </section>
+
     </main>
 
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Dein Warenkorb</h3>
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items-container">
+            <p class="empty-msg">Dein Warenkorb ist noch leer.</p>
+        </div>
+        <div class="sidebar-footer">
+            <div class="total-price"><span>Gesamtsumme:</span> <span id="cart-total">CHF 0,00</span></div>
+            <button class="btn btn-primary checkout-btn" onclick="checkout()">Zur Kasse (Simulation)</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a onclick="switchPage('home')">Home</a> | 
+            <a onclick="switchPage('shop')">Shop</a> | 
+            <a onclick="switchPage('about')">Über Uns</a> | 
+            <a onclick="switchPage('contact')">Kontakt</a> | 
+            <a onclick="switchPage('impressum')">Impressum</a>
+        </div>
+        <p>&copy; 2026 Fabio3D. Alle Rechte vorbehalten.</p>
+    </footer>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/fba23d88db.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
