@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabio3D</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PC Konfigurator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>🖥️ PC Konfigurator</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
 
+    <main class="container">
+        <section class="config-section">
+            <h2>Komponenten wählen</h2>
+            
+            <div class="component-group">
+                <label for="cpu">Prozessor (CPU)</label>
+                <select id="cpu" class="part-select" data-type="cpu">
+                    <option value="">Bitte wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="cooler">CPU-Kühler</label>
+                <select id="cooler" class="part-select" data-type="cooler" disabled>
+                    <option value="">Zuerst CPU wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="motherboard">Mainboard</label>
+                <select id="motherboard" class="part-select" data-type="motherboard" disabled>
+                    <option value="">Zuerst CPU wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="ram">Arbeitsspeicher (RAM)</label>
+                <select id="ram" class="part-select" data-type="ram" disabled>
+                    <option value="">Zuerst Mainboard wählen...</option>
+                </select>
+            </div>
+            <div class="component-group">
+                <label for="ssd">Speicher (SSD)</label>
+                <select id="ssd" class="part-select" data-type="ssd">
+                    <option value="">Bitte wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="gpu">Grafikkarte (GPU)</label>
+                <select id="gpu" class="part-select" data-type="gpu">
+                    <option value="">Bitte wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="case">Gehäuse</label>
+                <select id="case" class="part-select" data-type="case" disabled>
+                    <option value="">Zuerst Mainboard wählen...</option>
+                </select>
+            </div>
+
+            <div class="component-group">
+                <label for="psu">Netzteil</label>
+                <select id="psu" class="part-select" data-type="psu">
+                    <option value="">Bitte wählen...</option>
+                </select>
+            </div>
+        </section>
+
+        <aside class="summary-section">
+            <h2>Deine Konfiguration</h2>
+            <ul id="summary-list">
+                <li class="empty-state">Noch keine Komponenten ausgewählt.</li>
+            </ul>
+            <div class="total-price">
+                Gesamtpreis: CHF <span id="price-value">0</span>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
