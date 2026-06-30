@@ -42,7 +42,7 @@
             
             if (cart.length === 0) {
                 container.innerHTML = '<p class="empty-msg">Dein Warenkorb ist noch leer.</p>';
-                totalElement.innerText = '0,00 €';
+                totalElement.innerText = 'CHF 0,00';
                 return;
             }
             
@@ -53,11 +53,11 @@
                 total += item.price;
                 const itemRow = document.createElement('div');
                 itemRow.classList.add('cart-item');
-                itemRow.innerHTML = `<span>${item.name}</span><strong>${item.price.toFixed(2)} €</strong>`;
+                itemRow.innerHTML = `<span>${item.name}</span><strong>CHF ${item.price.toFixed(2)}</strong>`;
                 container.appendChild(itemRow);
             });
             
-            totalElement.innerText = `${total.toFixed(2)} €`;
+            totalElement.innerText = `CHF ${total.toFixed(2)}`;
         }
 
         function checkout() {
@@ -65,7 +65,6 @@
                 alert("Dein Warenkorb ist leer!");
                 return;
             }
-            alert("Simulation: Verbindung zum Checkout-Gateway wird hergestellt...");
             cart = [];
             updateCartUI();
             toggleCart();
@@ -95,12 +94,12 @@
                 }
             }).then(response => {
                 if (response.ok) {
-                    alert('Danke! Deine Nachricht wurde erfolgreich gesendet.');
+                    alert('Danke! Deine Nachricht wurde gesendet.');
                     form.reset();
                 } else {
-                    alert('Hoppla! Es gab ein Problem beim Absenden. Bitte versuche es nochmal.');
+                    alert('Es gab ein Problem beim Absenden. Bitte versuche es nochmal.');
                 }
             }).catch(error => {
-                alert('Netzwerkfehler. Bitte überprüfe deine Internetverbindung.');
+                alert('Fehler! Bitte überprüfe deine Internetverbindung!');
             });
         }
