@@ -19,9 +19,22 @@
             }
             window.scrollTo(0, 0);
         }
+let currentSlide = 0;
+
+function changeSlide(direction) {
+  const slidesContainer = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slides img').length;
+  currentSlide += direction;
+  if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  } 
+  else if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
 
         let cart = [];
-
         function toggleCart() {
             const sidebar = document.getElementById('cart-sidebar');
             sidebar.classList.toggle('open');
