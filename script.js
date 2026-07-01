@@ -33,8 +33,6 @@
                 }
                 slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
-
-        const sliderIndexes = new Map();
         function changeSlide(buttonElement, direction) {
                 const container = buttonElement.closest('.slider-container');
                 if (!container) return;
@@ -59,6 +57,8 @@
                 sliderIndexes.set(sliderId, currentSlide);
                 slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
+
+        
 
         let cart = [];
         function toggleCart() {
