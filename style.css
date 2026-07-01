@@ -416,7 +416,7 @@
                flex: 0 0 340px;
         }
 
-        .product-card {
+.product-card {
             width: 340px;
               background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -426,6 +426,8 @@
             flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: inline-block; // diä zwöi hani hinzuä gfügt
+            margin-right: 6px; // diä zwöi hani hinzuä gfügt
         }
 
         .product-card:hover {
