@@ -13,7 +13,7 @@
             <ul class="nav-links">
                 <li><a class="nav-link active" onclick="switchPage('home')">Home</a></li>
                 <li><a class="nav-link" onclick="switchPage('shop')">Shop</a></li>
-                <li><a class="nav-link" onclick="switchPage('about')">Über Uns</a></li>
+                <li><a class="nav-link" onclick="switchPage('about')">Über mich</a></li>
                 <li><a class="nav-link" onclick="switchPage('contact')">Kontakt</a></li>
                 <li><a class="nav-link" onclick="switchPage('impressum')">Impressum</a></li>
             </ul>
@@ -89,7 +89,7 @@
             <div class="shop-header">
                 <h2>Verfügbare <span class="gradient-text">Produkte</span></h2>
                 <p>Hier siehst du meine aktuelle Angebote.</p>
-            </div>
+            </div> 
                 <div class="productCards-row">
                     <div class="product-card">
                         <div class="slider-container">
@@ -102,8 +102,8 @@
                             <button class="arrow next" onclick="changeSlide(1)">&#10095;</button>
                         </div>
                         <div class="product-info">
-                            <span class="prod-category">Deko</span>
-                            <h3>Gandalf The White Staff mit Beleuchtung"</h3>
+                            <span class="prod-category">Deko / Spielzeug</span>
+                            <h3>Gandalf The White Staff mit LED-Beleuchtung</h3>
                             <div class="tech-specs">
                                 <span class="spec"><b>Material:</b> PLA</span>
                                 <span class="spec"><b>Qualität:</b> 0.20mm</span>
@@ -128,11 +128,16 @@
                         </div>
                         <div class="product-info">
                             <span class="prod-category">Spielzeug</span>
-                            <h3>Multicolor Pocket-Dino"</h3>
+                            <h3>Multicolor Pocket-Dino (verschiedene Varianten)<br></h3>
                             <div class="tech-specs">
                                 <span class="spec"><b>Material:</b> PETG</span>
                                 <span class="spec"><b>Auflösung:</b> 0.20mm</span>
                                 <span class="spec"><b>Infill:</b> 20% Gyroid</span>
+                            </div>
+                            <div class="variant-buttons">
+                                <button class="variant-btn active" onclick="jumpToSlide(this, 0)">Schwarz</button>
+                                <button class="variant-btn" onclick="jumpToSlide(this, 1)">Rot</button>
+                                <button class="variant-btn" onclick="jumpToSlide(this, 2)">Blau</button>
                             </div>
                             <div class="product-footer">
                                 <span class="price">CHF 4,95</span>
@@ -142,6 +147,7 @@
                     </div>
                 </div>
             </section>
+
         <section id="about-page" class="page-section">
             <div class="page-header">
                 <h2>Über mich & <span class="gradient-text">meine Mission</span></h2>
@@ -157,17 +163,23 @@
 
             <div class="features-grid" style="margin-top: 4rem;">
                 <div class="feature-card">
-                    <div class="icon">🎯</div>
+                    <div class="icon">
+                        <img src="Target_Icon.png" alt="Präzisions-Icon" class="card-icon">
+                    </div>
                     <h3>Präzision</h3>
                     <p>Ich achte auf perfekte Ergebnisse ohne Fehler.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">💎</div>
+                    <div class="icon">
+                        <img src="Diamond_Icon.png" alt="Diamant-Icon" class="card-icon">
+                    </div>
                     <h3>Qualität</h3>
                     <p>Qualität ist sehr wichtig für mich. Deshalb verwende ich High-Quality Filamente von Creality.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">⚡</div>
+                    <div class="icon">
+                        <img src="Shipping_Icon.png" alt="Versand_Icon" class="card-icon">
+                    </div>
                     <h3>Schneller Versand</h3>
                     <p>Ich stelle sicher, dass deine Produkte nach dem Druck sicher verpackt werden und schnell zu dir kommen.</p>
                 </div>
@@ -218,7 +230,6 @@
                 <p>Datenschutzerklärung<br>AGB</p>
             </div>
         </section>
-
     </main>
 
     <div id="cart-sidebar" class="sidebar">
@@ -246,6 +257,7 @@
         <p>&copy; 2026 Fabio3D. Alle Rechte vorbehalten.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="sliders.js"></script>
     <script src="https://kit.fontawesome.com/fba23d88db.js" crossorigin="anonymous"></script>
 </body>
 </html>
